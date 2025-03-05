@@ -7,9 +7,9 @@ When composing the docker file you can scale to as many runners as you want. Cur
 
 # Setup
 
-Move format.yml to compose.yml and add you github PAT token (classic).
+First generate a PAT token (classic) with the repo, workflow, and admin:org permissions.
 
-You need repo, workflow, and admin:org permissions.
+Then run ./setup.sh and provide your PAT token. This will create a compose.yml file and you are ready to run grid.
 
 # How to Use
 
