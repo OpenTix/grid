@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       - TOKEN=<Github PAT token>
-      - ORG=OpentTix
+      - ORG=OpenTix
     deploy:
       resources:
         reservations:
