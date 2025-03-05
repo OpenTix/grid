@@ -9,9 +9,6 @@ services:
       - TOKEN=<Github PAT token>
     deploy:
       resources:
-        limits:
-          cpus: '.25'
-          memory: 1024M
         reservations:
-          cpus: '.125'
+          cpus: '2'
           memory: 256M

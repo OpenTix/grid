@@ -1,10 +1,13 @@
-# grid
-Github Runners in Docker
+# Github Runners in Docker
+
+This repo contains the files necessary to run multiple github runners for the OpenTix/platform project on the one computer using Docker.
+
+When composing the docker file you can scale to as many runners as you want. Currently each runner is alotted 2 cpu cores and 256 MB of ram.
 
 
 # Setup
 
-Move format.yml to compose.yml and add you github PAT token.
+Move format.yml to compose.yml and add you github PAT token (classic).
 
 You need repo, workflow, and admin:org permissions.
 

@@ -35,9 +35,10 @@ RUN cd /home/docker && mkdir actions-runner && cd actions-runner \
     && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
-
+# Transfer ownership to the docker user and run the dependecies install
 RUN chown -R docker ~docker && /home/docker/actions-runner/bin/installdependencies.sh
 
+# Move the start script to docker
 COPY start.sh start.sh
 
 # make the script executable
@@ -46,14 +47,5 @@ RUN chmod +x start.sh
 # since the config and run script for actions are not allowed to be run by root,
 # set the user to "docker" so all subsequent commands are run as the docker user
 USER docker
-    
-# Install Node 20
-# ENV NODE_VERSION=20
-# RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-# ENV NVM_DIR=/home/docker/.nvm
-# RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
-# RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
-# RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-# ENV PATH="/home/docker/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
 ENTRYPOINT ["./start.sh"]
