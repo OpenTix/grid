@@ -1,0 +1,17 @@
+services:
+  runner:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - REPO=OpenTix/platform
+      - TOKEN=<Github PAT token>
+    deploy:
+      resources:
+        limits:
+          cpus: '.25'
+          memory: 1024M
+        reservations:
+          cpus: '.125'
+          memory: 256M
