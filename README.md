@@ -18,3 +18,7 @@ You need repo, workflow, and admin:org permissions.
 Run `docker compose up --build --scale runner=4`.
 
 To force fresh build run `docker compose build --no-cache`
+
+# Setting up as Service
+
+Example in platform-runner.service.
