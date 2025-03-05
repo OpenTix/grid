@@ -1,6 +1,6 @@
 # Github Runners in Docker
 
-This repo contains the files necessary to run multiple github runners for the OpenTix/platform project on the one computer using Docker.
+This repo contains the files necessary to run multiple github runners for the OpenTix org on the one computer using Docker.
 
 When composing the docker file you can scale to as many runners as you want. Currently each runner is alotted 2 cpu cores and 256 MB of ram.
 
