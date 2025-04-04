@@ -42,6 +42,9 @@ RUN apt-get install ca-certificates curl \
     && apt update \
     && apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+# Add docker user to docker group
+RUN usermod -aG docker docker
+
 # Get and extract the github runner
 RUN cd /home/docker && mkdir actions-runner && cd actions-runner \
     && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
