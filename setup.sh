@@ -14,6 +14,8 @@ echo "services:
     environment:
       - TOKEN=${token}
       - ORG=OpenTix
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     deploy:
       resources:
         reservations:

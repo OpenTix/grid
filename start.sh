@@ -1,11 +1,5 @@
 #!/bin/bash
 
-dockerd &
-while (! docker info > /dev/null 2>&1); do
-    echo "Waiting for Docker daemon..."
-    sleep 1
-done
-
 ACCESS_TOKEN=$TOKEN
 
 echo "ACCESS_TOKEN ${ACCESS_TOKEN}"
