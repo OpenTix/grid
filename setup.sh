@@ -6,6 +6,7 @@ read token
 
 echo "services:
   runner:
+    privileged: true
     build:
       context: .
       dockerfile: Dockerfile
